@@ -16,6 +16,7 @@ public class RigidbodyProperties {
         get { return velocity; }
     }
 
+    [SerializeField]
     private Vector3 centerOfMass = new Vector3(0, 0, 0);
     public Vector3 CenterOfMass {
         set { centerOfMass = value; }

@@ -79,7 +79,6 @@
     <Compile Include="Assets\Scripts\ODE\ODESolver.cs" />
     <Compile Include="Assets\Scripts\ODE\ProjectileODE.cs" />
     <Compile Include="Assets\Scripts\ODE\ProjectileODEData.cs" />
-    <Compile Include="Assets\Scripts\PathTracker.cs" />
     <Compile Include="Assets\Scripts\Physics\CustomPhysics.cs" />
     <Compile Include="Assets\Scripts\Physics\CustomRigidbody.cs" />
     <Compile Include="Assets\Scripts\Physics\RigidbodyProperties.cs" />

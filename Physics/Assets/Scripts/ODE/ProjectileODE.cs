@@ -12,8 +12,7 @@ public class ProjectileODE : ODE<ProjectileODEData> {
                 float time, 
                 float deltaTime) {
 
-        ProjectileODEData tmp =
-            new ProjectileODEData(initial);
+        ProjectileODEData tmp = new ProjectileODEData(initial);
 
         if(derivative != null) {
             tmp.Position += derivative.Position * deltaTime;
@@ -22,16 +21,17 @@ public class ProjectileODE : ODE<ProjectileODEData> {
 
         ProjectileODEData derivativeResult =
             new ProjectileODEData(tmp);
+
         derivativeResult.Position = tmp.Velocity;
         derivativeResult.Velocity = acceleration(tmp, time + deltaTime);
 
-        return derivativeResult; ;
+        return derivativeResult;
     }
 
     Vector3 acceleration(ProjectileODEData state, float time) {
         Vector3 airVelocity = CustomPhysics.AirVelocity(state.Velocity);
-        Vector3 drag = -airVelocity.normalized * airVelocity.sqrMagnitude *
-            CustomPhysics.AirDensity * state.Area * state.DragCoefficient / (state.Mass * 2.0f);
+        Vector3 drag = 0.5f * (-airVelocity.normalized * airVelocity.sqrMagnitude) *
+            CustomPhysics.AirDensity * state.Area * state.DragCoefficient / state.Mass;
 
         return CustomPhysics.Gravity + drag;
     }

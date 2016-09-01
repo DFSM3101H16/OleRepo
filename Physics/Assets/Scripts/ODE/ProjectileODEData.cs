@@ -42,8 +42,8 @@ public class ProjectileODEData : ODEData<ProjectileODEData> {
     public override ProjectileODEData calculateNextState(ProjectileODEData[] derivatives) {
         ProjectileODEData result = new ProjectileODEData(this);
 
-        Vector3 dxdt = (derivatives[0].Position + 2.0f * (derivatives[1].Position + derivatives[2].Position) + derivatives[3].Position) / 6.0f;
-        Vector3 dvdt = (derivatives[0].Velocity + 2.0f * (derivatives[1].Velocity + derivatives[2].Velocity) + derivatives[3].Velocity) / 6.0f;
+        Vector3 dxdt = (derivatives[0].Position + 2.0f * derivatives[1].Position + 2.0f * derivatives[2].Position + derivatives[3].Position) / 6.0f;
+        Vector3 dvdt = (derivatives[0].Velocity + 2.0f * derivatives[1].Velocity + 2.0f * derivatives[2].Velocity + derivatives[3].Velocity) / 6.0f;
 
         result.Position += Time.fixedDeltaTime * dxdt;
         result.Velocity += Time.fixedDeltaTime * dvdt;

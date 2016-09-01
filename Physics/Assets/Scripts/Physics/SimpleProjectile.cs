@@ -16,6 +16,7 @@ public class SimpleProjectile : CustomRigidbody {
         Properties.Velocity = result.Velocity;
         if(transform.position.y < 0) {
             Time.timeScale = 0;
+            Debug.Log(Time.timeSinceLevelLoad);
         }
     }
 }
