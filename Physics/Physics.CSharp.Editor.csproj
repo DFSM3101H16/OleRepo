@@ -99,10 +99,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Physics.CSharp.Plugins.csproj">
-      <Project>{1008E5A6-2BA3-EC5F-E71A-5D97700F44E7}</Project>
-      <Name>Physics.CSharp.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="Physics.CSharp.csproj">
       <Project>{527C9619-F6B6-0978-58DE-B6D890DDD129}</Project>
       <Name>Physics.CSharp</Name>
@@ -110,13 +106,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
-    <Compile Include="Assets\Editor\CustomWindows\CustomPhysicsWindow.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
-    <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

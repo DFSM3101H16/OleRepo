@@ -68,12 +68,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Physics.CSharp.Plugins.csproj">
-      <Project>{1008E5A6-2BA3-EC5F-E71A-5D97700F44E7}</Project>
-      <Name>Physics.CSharp.Plugins</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\Scripts\ODE\ODE.cs" />
     <Compile Include="Assets\Scripts\ODE\ODEData.cs" />
     <Compile Include="Assets\Scripts\ODE\ODESolver.cs" />
@@ -85,11 +79,8 @@
     <Compile Include="Assets\Scripts\Physics\SimpleProjectile.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
-    <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Prototyping\Shaders\WorldCoordDiffuse.shader" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

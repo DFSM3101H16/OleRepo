@@ -2,32 +2,39 @@
 using System.Collections;
 using UnityEditor;
 
-public class CustomPhysics {
-    private static Vector3 windVelocity =
-        new Vector3(EditorPrefs.GetFloat("windx", 0),
-                    EditorPrefs.GetFloat("windy", 0),
-                    EditorPrefs.GetFloat("windz", 0));
+public class CustomPhysics : MonoBehaviour {
+    private static CustomPhysics instance = new CustomPhysics();
+
     public static Vector3 WindVelocity {
-        set { windVelocity = value; }
-        get { return windVelocity; }
+        set { instance.windVelocity = value; }
+        get { return instance.windVelocity; }
     }
 
-    private static Vector3 gravity =
-        new Vector3(EditorPrefs.GetFloat("gravx", 0),
-                    EditorPrefs.GetFloat("gravy", -9.81f),
-                    EditorPrefs.GetFloat("gravx", 0));
     public static Vector3 Gravity {
-        set { gravity = value; }
-        get { return gravity; }
+        set { instance.gravity = value; }
+        get { return instance.gravity; }
     }
 
-    private static float airDensity = EditorPrefs.GetFloat("airDensity");
     public static float AirDensity {
-        set { airDensity = value; }
-        get { return airDensity; }
+        set { instance.airDensity = value; }
+        get { return instance.airDensity; }
     }
 
     public static Vector3 AirVelocity(Vector3 velocity) {
         return velocity - WindVelocity;
+    }
+
+    [SerializeField]
+    private Vector3 gravity = new Vector3(0, -9.81f, 0);
+
+    [SerializeField]
+    private float airDensity = 1.225f;
+
+    [SerializeField]
+    private Vector3 windVelocity = new Vector3(0, 0, 0);
+
+
+    void Start() {
+        instance = this;
     }
 }
