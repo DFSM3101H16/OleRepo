@@ -20,7 +20,9 @@ public class CustomPhysics : MonoBehaviour {
         get { return instance.airDensity; }
     }
 
+
     public static Vector3 AirVelocity(Vector3 velocity) {
+        //Velocity relative to surrounding air
         return velocity - WindVelocity;
     }
 

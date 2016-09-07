@@ -1,6 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
+
+/*
+    Container class for all the properties of the custom rigidbody
+*/
+
 [Serializable]
 public class RigidbodyProperties {
     [SerializeField]

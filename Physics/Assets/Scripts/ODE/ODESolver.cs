@@ -2,6 +2,9 @@
 using System.Collections;
 using System;
 
+
+//http://gafferongames.com/game-physics/integration-basics/
+
 public class ODESolver {
     public static E RungeKutta4<E>(ODE<E> ode, float time)
         where E : ODEData<E>

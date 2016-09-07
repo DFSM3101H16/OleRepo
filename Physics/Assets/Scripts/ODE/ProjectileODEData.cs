@@ -40,6 +40,14 @@ public class ProjectileODEData : ODEData<ProjectileODEData> {
     }
 
     public override ProjectileODEData calculateNextState(ProjectileODEData[] derivatives) {
+        //More runge-kutta  
+        //k1 = derivatives[0]
+        //k2 = derivatives[1]
+        //k3 = derivatives[2]
+        //k4 = derivatives[3]
+        //yn+1 =  yn + h * (1/6*k1 + 2/6*k2 + 2/6*k3 + 1/6*k4)
+        //tn+1 = tn + h
+
         ProjectileODEData result = new ProjectileODEData(this);
 
         Vector3 dxdt = (derivatives[0].Position + 2.0f * derivatives[1].Position + 2.0f * derivatives[2].Position + derivatives[3].Position) / 6.0f;

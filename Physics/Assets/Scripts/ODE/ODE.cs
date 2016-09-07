@@ -11,7 +11,7 @@ public abstract class ODE<E>
     }
 
     public ODE(E initial) {
-        this.Initial = initial;
+        this.Initial = initial;     //Initial data of the differential equation
     }
 
     public abstract E Evaluate(E state, E derivative, float time, float deltaTime);
