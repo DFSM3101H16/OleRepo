@@ -1,6 +1,6 @@
 This unity project uses fourth order runge-kutta to approximate the trajectory of a projectile with air resistance.
 
-The code is the same as from the book, modified so I can more easily use the code myself.
+The code is almost the same as from the book, modified so I can more easily use the code myself.
 There is no in-game menu, so initial values (velocity, weight, drag coefficient and so on) has to be set in the unity inspector
 
 Resources used

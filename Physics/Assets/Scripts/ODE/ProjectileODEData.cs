@@ -14,9 +14,14 @@ public class ProjectileODEData : ODEData<ProjectileODEData> {
         private set; get;
     }
 
-    public float Area {
+    public float Radius {
         private set; get;
     } 
+
+    public float Area {
+        private set {}
+        get { return Radius * Radius * Mathf.PI; }
+    }
 
     public float DragCoefficient {
         private set; get;
@@ -26,7 +31,7 @@ public class ProjectileODEData : ODEData<ProjectileODEData> {
         Position = original.Position;
         Velocity = original.Velocity;
         Mass = original.Mass;
-        Area = original.Area;
+        Radius = original.Radius;
         DragCoefficient= original.DragCoefficient;
     }
 
@@ -35,7 +40,7 @@ public class ProjectileODEData : ODEData<ProjectileODEData> {
         Position = rb.transform.position;
         Velocity = rb.Properties.Velocity;
         Mass = rb.Properties.Mass;
-        Area = rb.Properties.Area;
+        Radius = rb.Properties.Radius;
         DragCoefficient = rb.Properties.DragCoefficient;
     }
 

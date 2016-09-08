@@ -29,10 +29,10 @@ public class RigidbodyProperties {
     }
 
     [SerializeField]
-    private float area = 0.001432f;
-    public float Area {
-        set { area = value; }
-        get { return area; }
+    private float radius = 0.001432f;
+    public float Radius {
+        set { radius = value; }
+        get { return radius; }
     }
 
     [SerializeField]
