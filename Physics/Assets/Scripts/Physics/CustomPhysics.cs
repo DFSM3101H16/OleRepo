@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor;
 
 public class CustomPhysics : MonoBehaviour {
     private static CustomPhysics instance = new CustomPhysics();

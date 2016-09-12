@@ -21,6 +21,18 @@ public class RigidbodyProperties {
         get { return velocity; }
     }
 
+    private Vector3 rotationAxis = new Vector3(1, 0, 0);
+    public Vector3 RotationAxis {
+        set
+        {
+            rotationAxis = value;
+            if (value.sqrMagnitude > 0) {
+                rotationAxis.Normalize();
+            }
+        }
+        get { return rotationAxis; }
+    }
+
     [SerializeField]
     private Vector3 centerOfMass = new Vector3(0, 0, 0);
     public Vector3 CenterOfMass {

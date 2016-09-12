@@ -11,11 +11,11 @@ public class ProjectileODEData : ODEData<ProjectileODEData> {
     }
 
     public float Mass {
-        private set; get;
+        get { return rb.Properties.Mass; }
     }
 
     public float Radius {
-        private set; get;
+        get { return rb.Properties.Radius; }
     } 
 
     public float Area {
@@ -24,24 +24,19 @@ public class ProjectileODEData : ODEData<ProjectileODEData> {
     }
 
     public float DragCoefficient {
-        private set; get;
+        get { return rb.Properties.DragCoefficient; }
     }
 
     public ProjectileODEData(ProjectileODEData original) {
+        rb = original.rb;
         Position = original.Position;
         Velocity = original.Velocity;
-        Mass = original.Mass;
-        Radius = original.Radius;
-        DragCoefficient= original.DragCoefficient;
     }
 
     public ProjectileODEData(CustomRigidbody rb) {
         this.rb = rb;
         Position = rb.transform.position;
         Velocity = rb.Properties.Velocity;
-        Mass = rb.Properties.Mass;
-        Radius = rb.Properties.Radius;
-        DragCoefficient = rb.Properties.DragCoefficient;
     }
 
     public override ProjectileODEData calculateNextState(ProjectileODEData[] derivatives) {
