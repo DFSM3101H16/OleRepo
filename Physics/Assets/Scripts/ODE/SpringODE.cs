@@ -13,6 +13,12 @@ class SpringODE : ODE<SpringODEData> {
         tmp.Velocity += derivative.Velocity * deltaTime;
         tmp.Position += derivative.Position * deltaTime;
 
+        SpringODEData derivativeResult = new SpringODEData(initial);
+
+        derivativeResult.Position = tmp.Velocity;
+        derivativeResult.Velocity = tmp.Position * 
+
+
         return null;
     }
 }
